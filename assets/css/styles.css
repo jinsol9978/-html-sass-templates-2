@@ -259,6 +259,10 @@ legend {
   content: "";
 }
 
+:root {
+  --swiper-theme-color: #36c5f4;
+}
+
 .container {
   padding: 0 20px;
   transition: all 0.3s;
@@ -347,6 +351,11 @@ legend {
   font-size: 1.4rem;
 }
 
+@media screen and (min-width: 1280px) {
+  #header {
+    position: static;
+  }
+}
 #gnb {
   display: flex;
 }
@@ -411,6 +420,7 @@ legend {
 }
 .slide-intro .slide-txt strong {
   display: block;
+  margin: 10px 0 15px;
   font-size: 2.3rem;
   line-height: 1.2;
 }
@@ -429,4 +439,14 @@ legend {
 }
 .slide-intro img {
   height: 100vh;
+}
+
+@media screen and (min-width: 1280px) {
+  .slide-intro .slide-txt {
+    width: 100%;
+    text-align: left;
+  }
+  .slide-intro img {
+    height: 640px;
+  }
 }/*# sourceMappingURL=styles.css.map */

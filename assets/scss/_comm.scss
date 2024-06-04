@@ -1,3 +1,7 @@
+:root {
+    --swiper-theme-color: #36c5f4;
+}
+
 // 사이트의 공통 스타일을 정의합니다.
 
 // x축 그리드 정렬
@@ -92,6 +96,12 @@
         }
     }
 }
+@media screen and (min-width: $breakpoint-xl) {
+    #header {
+        position: static;
+    }
+}
+
 #gnb {
     display: flex;
     .label-menu {

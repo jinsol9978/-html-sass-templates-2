@@ -19,6 +19,7 @@
         }
         strong {
             display: block;
+            margin: 10px 0 15px;
             font-size: 2.3rem;
             line-height: 1.2;
         }
@@ -39,6 +40,17 @@
     img {
         // height: calc(100vh - $hdH);
         height: 100vh;
+    }
+}
+@media screen and (min-width: $breakpoint-xl) {
+    .slide-intro {
+        .slide-txt {
+            width: 100%;
+            text-align: left;
+        }
+        img {
+            height: 640px;
+        }
     }
 }
 
