@@ -62,7 +62,15 @@
 }
 // header
 #header {
-    background: #eee;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    &.active {
+        background: rgba(241, 243, 248, 0.3);
+        backdrop-filter: blur(30px);
+    }
     .container {
         @include flexSpaceBetween;
     }
@@ -70,6 +78,7 @@
         a {
             @include flexitems;
             height: $hdH;
+            font-size: 1.4rem;
         }
     }
 }
