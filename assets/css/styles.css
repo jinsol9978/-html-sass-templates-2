@@ -395,6 +395,16 @@ legend {
   flex: 1;
 }
 
+.sec-type1 {
+  padding: 50px 0;
+}
+.sec-type1 .sec-title {
+  padding: 30px 0;
+  font-size: 1.875rem;
+  color: #000;
+  text-align: center;
+}
+
 #footer {
   padding: 20px 0;
   background: blue;
@@ -403,11 +413,17 @@ legend {
 .slide-intro .swiper-slide {
   position: relative;
 }
+.slide-intro .swiper-slide.swiper-slide-active .slide-txt {
+  transform: translate(-50%, -50%);
+  opacity: 1;
+}
 .slide-intro .slide-txt {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 0);
+  opacity: 0;
+  transition: all 0.8s;
   width: 80%;
   margin: 0 auto;
   text-align: center;
@@ -446,7 +462,38 @@ legend {
     width: 100%;
     text-align: left;
   }
+  .slide-intro .slide-txt span {
+    font-size: 1.2rem;
+  }
+  .slide-intro .slide-txt strong {
+    margin-bottom: 30px;
+    font-size: 5rem;
+  }
+  .slide-intro .slide-txt p {
+    font-size: 1.5rem;
+  }
   .slide-intro img {
     height: 640px;
+  }
+}
+.sec-eft {
+  overflow: hidden;
+}
+
+.slide-eft {
+  overflow: visible;
+  width: 85%;
+  margin-left: 0;
+  margin-right: 0;
+}
+.slide-eft .swiper-slide {
+  height: 500px;
+  background: #36c5f4;
+  border-radius: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .slide-eft {
+    width: 95%;
   }
 }/*# sourceMappingURL=styles.css.map */

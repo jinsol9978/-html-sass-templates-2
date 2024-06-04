@@ -2,12 +2,20 @@
 .slide-intro {
     .swiper-slide {
         position: relative;
+        &.swiper-slide-active {
+            .slide-txt {
+                transform: translate(-50%, -50%);
+                opacity: 1;
+            }
+        }
     }
     .slide-txt {
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, 0);
+        opacity: 0;
+        transition: all 0.8s;
         width: 80%;
         margin: 0 auto;
         text-align: center;
@@ -47,6 +55,16 @@
         .slide-txt {
             width: 100%;
             text-align: left;
+            span {
+                font-size: 1.2rem;
+            }
+            strong {
+                margin-bottom: 30px;
+                font-size: 5rem;
+            }
+            p {
+                font-size: 1.5rem;
+            }
         }
         img {
             height: 640px;
@@ -55,3 +73,23 @@
 }
 
 // main
+.sec-eft {
+    overflow: hidden;
+}
+.slide-eft {
+    overflow: visible;
+    width: 85%;
+    margin-left: 0;
+    margin-right: 0;
+    .swiper-slide {
+        height: 500px;
+        background: $primary;
+        border-radius: 20px;
+    }
+}
+
+@media screen and (min-width: $breakpoint-md) {
+    .slide-eft {
+        width: 95%;
+    }
+}
