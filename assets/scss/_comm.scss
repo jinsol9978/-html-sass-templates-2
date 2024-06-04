@@ -7,40 +7,24 @@
 // header
 #header {
     @include flexSpaceBetween;
-    padding: 0 40px;
     background: #eee;
 }
 #gnb {
     #btnMenu {
-        display: none;
     }
     .btn-menu {
-        display: none;
     }
     .m-util {
         display: none;
     }
-    .depth1 {
-        display: flex;
-        // > li::after {}
-        > li {
-            // &::after {}
-            > a {
-                display: flex;
-                align-items: center;
-                padding: 0 40px;
-                height: 90px;
-            }
-        }
-    }
-    .depth2 {
+    .menu-wrap {
         display: none;
     }
 }
 
 // util
 .util {
-    display: flex;
+    display: none;
 }
 .lang {
     display: flex;

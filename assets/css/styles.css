@@ -263,34 +263,18 @@ legend {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 40px;
   background: #eee;
 }
 
-#gnb #btnMenu {
-  display: none;
-}
-#gnb .btn-menu {
-  display: none;
-}
 #gnb .m-util {
   display: none;
 }
-#gnb .depth1 {
-  display: flex;
-}
-#gnb .depth1 > li > a {
-  display: flex;
-  align-items: center;
-  padding: 0 40px;
-  height: 90px;
-}
-#gnb .depth2 {
+#gnb .menu-wrap {
   display: none;
 }
 
 .util {
-  display: flex;
+  display: none;
 }
 
 .lang {
