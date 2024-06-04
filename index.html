@@ -1,41 +1,118 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="페이지 제목">
-    <meta property="og:description" content="페이지 설명">
-    <meta property="og:image" content="http://www.mysite.com/article/article1_featured_image.jpg">
-    <meta property="og:url" content="http://www.mysite.com/article/article1.html">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="페이지 제목">
-    <meta name="twitter:description" content="페이지 설명">
-    <meta name="twitter:image" content="http://www.mysite.com/article/article1.html">
-    <meta name="twitter:domain" content="사이트 명">
-    <!-- css -->
-    <link rel="stylesheet" href="./assets/css/styles.css">
-    <!-- js -->
-    <script src="./assets/js/comm.js"></script>
-</head>
-<body>
-    <div id="wrap">
-        <header id="header">
-            <h1 id="logo">
-                <a href="/">logo</a>
-            </h1>
-            <nav id="gnb">nav</nav>
-            <div class="util">util menu</div>
-        </header>
-        <div class="slide-intro">slide</div>
-        <main id="main">
-            <section class="sec-g sec-1">
-                <h2 class="sec-title">섹션 타이틀</h2>
-                <div class="sec-content">섹션 내용</div>
-            </section>
-        </main>
-        <footer id="footer">footer</footer>
-    </div>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="페이지 제목" />
+        <meta property="og:description" content="페이지 설명" />
+        <meta property="og:image" content="http://www.mysite.com/article/article1_featured_image.jpg" />
+        <meta property="og:url" content="http://www.mysite.com/article/article1.html" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="페이지 제목" />
+        <meta name="twitter:description" content="페이지 설명" />
+        <meta name="twitter:image" content="http://www.mysite.com/article/article1.html" />
+        <meta name="twitter:domain" content="사이트 명" />
+        <!-- css -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="./assets/css/styles.css" />
+        <!-- js -->
+        <script src="./assets/js/comm.js"></script>
+    </head>
+    <body>
+        <div id="u-skip">
+            <a href="#gnb">전체메뉴 바로가기</a>
+            <a href="#main">본문 바로가기</a>
+        </div>
+        <div id="wrap">
+            <header id="header">
+                <h1 id="logo">
+                    <a href="/">logo</a>
+                </h1>
+                <nav id="gnb">
+                    <input type="checkbox" name="btnMenu" id="btnMenu" />
+                    <label for="btnMenu" class="btn-menu">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <span class="blind">전체메뉴 보기</span>
+                    </label>
+                    <div class="menu-wrap">
+                        <div class="m-util">
+                            <a href="#">로그인</a>
+                            <a href="#">회원가입</a>
+                            <a href="#">공지사항</a>
+                        </div>
+                        <ul class="depth1">
+                            <li>
+                                <a href="#">menu1</a>
+                                <ul class="depth2">
+                                    <li><a href="#">menu1-1</a></li>
+                                    <li><a href="#">menu1-2</a></li>
+                                    <li><a href="#">menu1-3</a></li>
+                                    <li><a href="#">menu1-4</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">menu2</a>
+                                <ul class="depth2">
+                                    <li><a href="#">menu1-1</a></li>
+                                    <li><a href="#">menu1-2</a></li>
+                                    <li><a href="#">menu1-3</a></li>
+                                    <li><a href="#">menu1-4</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">menu3</a>
+                                <ul class="depth2">
+                                    <li><a href="#">menu1-1</a></li>
+                                    <li><a href="#">menu1-2</a></li>
+                                    <li><a href="#">menu1-3</a></li>
+                                    <li><a href="#">menu1-4</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">menu4</a>
+                                <ul class="depth2">
+                                    <li><a href="#">menu1-1</a></li>
+                                    <li><a href="#">menu1-2</a></li>
+                                    <li><a href="#">menu1-3</a></li>
+                                    <li><a href="#">menu1-4</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="util">
+                    <div class="lang">
+                        <a href="#">KOR</a>
+                        <a href="#">ENG</a>
+                    </div>
+                    <div class="search-area">
+                        <button class="btn-search">
+                            <span class="blind">검색창 열기</span>
+                        </button>
+                        <div class="layer-search">
+                            <form action="">
+                                <input type="search" name="search" id="search" placeholder="검색어를 입력하세요" />
+                                <button type="submit">검색</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="slide-intro">slide</div>
+            <main id="main">
+                <section class="sec-g sec-1">
+                    <h2 class="sec-title">섹션 타이틀</h2>
+                    <div class="sec-content">섹션 내용</div>
+                </section>
+            </main>
+            <footer id="footer">footer</footer>
+        </div>
+    </body>
 </html>

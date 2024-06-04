@@ -108,7 +108,7 @@ input {
 }
 
 button {
-   appearance: button;
+    appearance: button;
     border-radius: 0;
 }
 
@@ -132,7 +132,7 @@ body {
     font-size: 16px;
     line-height: 1.5;
     font-family: 'Noto Sans KR', 'Malgun Gothic', '맑은 고딕', sans-serif;
-    color: #222;
+    color: $txtDefult;
 }
 
 /* desktop */

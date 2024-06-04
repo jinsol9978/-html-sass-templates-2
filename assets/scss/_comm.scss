@@ -4,9 +4,56 @@
 // 카드디자인, 리스트 디자인
 // 공통 스타일을 정의
 
-
 // header
 #header {
     @include flexSpaceBetween;
+    padding: 0 40px;
+    background: #eee;
+}
+#gnb {
+    #btnMenu {
+        display: none;
+    }
+    .btn-menu {
+        display: none;
+    }
+    .m-util {
+        display: none;
+    }
+    .depth1 {
+        display: flex;
+        // > li::after {}
+        > li {
+            // &::after {}
+            > a {
+                display: flex;
+                align-items: center;
+                padding: 0 40px;
+                height: 90px;
+            }
+        }
+    }
+    .depth2 {
+        display: none;
+    }
+}
+
+// util
+.util {
+    display: flex;
+}
+.lang {
+    display: flex;
+    a {
+        display: flex;
+        align-items: center;
+        padding: 0 20px;
+        height: 90px;
+    }
+}
+.search-area {
+    .layer-search {
+        display: none;
+    }
 }
 // footer

@@ -123,7 +123,7 @@ body {
   font-size: 16px;
   line-height: 1.5;
   font-family: "Noto Sans KR", "Malgun Gothic", "맑은 고딕", sans-serif;
-  color: #222;
+  color: #202020;
 }
 
 /* desktop */
@@ -263,4 +263,46 @@ legend {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 40px;
+  background: #eee;
+}
+
+#gnb #btnMenu {
+  display: none;
+}
+#gnb .btn-menu {
+  display: none;
+}
+#gnb .m-util {
+  display: none;
+}
+#gnb .depth1 {
+  display: flex;
+}
+#gnb .depth1 > li > a {
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+  height: 90px;
+}
+#gnb .depth2 {
+  display: none;
+}
+
+.util {
+  display: flex;
+}
+
+.lang {
+  display: flex;
+}
+.lang a {
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  height: 90px;
+}
+
+.search-area .layer-search {
+  display: none;
 }/*# sourceMappingURL=styles.css.map */
