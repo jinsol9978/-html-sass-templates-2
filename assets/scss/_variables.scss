@@ -27,5 +27,9 @@ $breakpoint-xl: 1280px;
 $breakpoint-xxl: 1440px;
 
 // layout
-$hdH: 70px;
+$hdH: 80px;
+@media screen and (min-width: $breakpoint-md) {
+    $hdH: 100px;
+}
+
 $ftH: 70px;

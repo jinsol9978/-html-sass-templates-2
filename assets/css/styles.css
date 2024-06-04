@@ -284,6 +284,28 @@ legend {
   padding: 30px 0;
 }
 
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 #wrap {
   display: flex;
   flex-direction: column;
@@ -291,12 +313,29 @@ legend {
 }
 
 #header {
+  background: #eee;
+}
+#header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: red;
+}
+#header #logo a {
+  display: flex;
+  align-items: center;
+  height: 80px;
 }
 
+#gnb {
+  display: flex;
+}
+#gnb .label-menu .bar {
+  width: 30px;
+  height: 3px;
+  background: #000;
+  margin: 5px 0;
+  border-radius: 3px;
+}
 #gnb .m-util {
   display: none;
 }

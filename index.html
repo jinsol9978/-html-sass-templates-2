@@ -19,9 +19,12 @@
             href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap"
             rel="stylesheet"
         />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
         <link rel="stylesheet" href="./assets/css/styles.css" />
+
         <!-- js -->
-        <script src="./assets/js/comm.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script defer src="./assets/js/comm.js"></script>
     </head>
     <body>
         <div id="u-skip">
@@ -35,8 +38,8 @@
                         <a href="/">logo</a>
                     </h1>
                     <nav id="gnb">
-                        <input type="checkbox" name="btnMenu" id="btnMenu" />
-                        <label for="btnMenu" class="btn-menu">
+                        <input type="checkbox" name="btnMenu" id="btnMenu" class="blind" />
+                        <label for="btnMenu" class="label-menu">
                             <div class="bar"></div>
                             <div class="bar"></div>
                             <div class="bar"></div>
@@ -107,7 +110,37 @@
                     </div>
                 </div>
             </header>
-            <div class="slide-intro">slide</div>
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <picture>
+                            <img
+                                src="https://images.unsplash.com/photo-1712697888859-27e1f1ee27cd?q=80&w=1927&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt=""
+                            />
+                        </picture>
+                    </div>
+                    <div class="swiper-slide">
+                        <picture>
+                            <img
+                                src="https://images.unsplash.com/photo-1712697889651-af232d2df3c8?q=80&w=2128&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt=""
+                            />
+                        </picture>
+                    </div>
+                    <div class="swiper-slide">
+                        <picture>
+                            <img
+                                src="https://images.unsplash.com/photo-1650099667208-5c2110041c5e?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt=""
+                            />
+                        </picture>
+                    </div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
             <main id="main">
                 <section class="sec-g sec-1">
                     <div class="container">

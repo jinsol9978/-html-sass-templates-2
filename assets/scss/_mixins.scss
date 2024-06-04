@@ -3,6 +3,10 @@
     justify-content: space-between;
     align-items: center;
 }
+@mixin flexitems {
+    display: flex;
+    align-items: center;
+}
 
 @mixin flex($justify: center, $align: center, $direction: row) {
     display: flex;
