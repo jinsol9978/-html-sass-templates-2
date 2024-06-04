@@ -1,13 +1,47 @@
 // 사이트의 공통 스타일을 정의합니다.
 
+// x축 그리드 정렬
+// mobile first
+.container {
+    padding: 0 20px;
+    transition: all 0.3s;
+}
+// mobile (480px) 이상일 때
+// tablet (768px) 이상일 때
+@media screen and (min-width: $breakpoint-md) {
+    .container {
+        padding: 0 30px;
+    }
+}
+// laptop (1024px) 이상일 때
+// desktop (1280px) 이상일 때
+@media screen and (min-width: $breakpoint-xl) {
+    .container {
+        max-width: 1340px;
+        margin: 0 auto;
+        padding: 0 30px;
+    }
+}
+.bg-grey {
+    background: #f8f8f8;
+}
+.sec-g {
+    padding: 30px 0;
+}
+
 // 버튼, 라디오 버튼, 체크박스
 // 카드디자인, 리스트 디자인
 // 공통 스타일을 정의
 
+#wrap {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
 // header
 #header {
     @include flexSpaceBetween;
-    background: #eee;
+    background: red;
 }
 #gnb {
     #btnMenu {
@@ -40,4 +74,13 @@
         display: none;
     }
 }
+// main
+#main {
+    flex: 1;
+}
+
 // footer
+#footer {
+    padding: 20px 0;
+    background: blue;
+}
