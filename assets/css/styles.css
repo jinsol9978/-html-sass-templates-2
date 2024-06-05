@@ -260,7 +260,7 @@ legend {
 }
 
 :root {
-  --swiper-theme-color: #fff000;
+  --swiper-theme-color: #0400ff;
 }
 
 .container {
@@ -462,6 +462,10 @@ legend {
   left: 50%;
   bottom: 90px;
 }
+.slide-intro .swiper-button-prev:hover::before,
+.slide-intro .swiper-button-next:hover::before {
+  color: #ff5722;
+}
 .slide-intro .swiper-button-prev::before,
 .slide-intro .swiper-button-next::before {
   font-family: "Line Awesome Free";
@@ -483,6 +487,18 @@ legend {
 }
 .slide-intro .swiper-button-next::before {
   content: "\f061";
+}
+.slide-intro .swiper-pagination {
+  width: 70px;
+  top: auto;
+  left: 50%;
+  bottom: 86px;
+  transform: translateX(-500px);
+  color: #fff000;
+  font-size: 1.2rem;
+}
+.slide-intro .swiper-pagination span {
+  font-weight: bold;
 }
 
 @media screen and (min-width: 1280px) {
@@ -509,15 +525,36 @@ legend {
 }
 
 .slide-eft {
-  overflow: visible;
+  position: relative;
   width: 85%;
   margin-left: 0;
   margin-right: 0;
 }
 .slide-eft .swiper-slide {
-  height: 500px;
-  background: #fff000;
+  height: 400px;
+  background: #e0e0e0;
   border-radius: 20px;
+}
+.slide-eft .swiper-button-prev,
+.slide-eft .swiper-button-next {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  margin: 0;
+  background: rgba(255, 240, 0, 0.5);
+  transform: translateY(-50%);
+}
+.slide-eft .swiper-button-prev::after,
+.slide-eft .swiper-button-next::after {
+  transform: scale(0.8);
+}
+.slide-eft .swiper-button-prev {
+  left: -100px;
+}
+.slide-eft .swiper-button-next {
+  right: -100px;
 }
 
 @media screen and (min-width: 768px) {

@@ -57,6 +57,11 @@
         top: auto;
         left: 50%;
         bottom: 90px;
+        &:hover {
+            &::before {
+                color: $secondary;
+            }
+        }
         &::before {
             font-family: 'Line Awesome Free';
             font-weight: 900;
@@ -76,6 +81,19 @@
         transform: translateX(-570px);
         &::before {
             content: '\f061';
+        }
+    }
+    // pagination
+    .swiper-pagination {
+        width: 70px;
+        top: auto;
+        left: 50%;
+        bottom: 86px;
+        transform: translateX(-500px);
+        color: $primary;
+        font-size: 1.2rem;
+        span {
+            font-weight: bold;
         }
     }
 }
@@ -106,15 +124,44 @@
     overflow: hidden;
 }
 .slide-eft {
-    overflow: visible;
+    position: relative;
+    // overflow: visible;
     width: 85%;
     margin-left: 0;
     margin-right: 0;
     .swiper-slide {
-        height: 500px;
-        background: $primary;
+        height: 400px;
+        background: $gray-300;
         border-radius: 20px;
     }
+    .swiper-button-prev,
+    .swiper-button-next {
+        @include flexCenter;
+        width: 80px;
+        height: 80px;
+        margin: 0;
+        background: rgba($primary, 0.5);
+        transform: translateY(-50%);
+        &::after {
+            transform: scale(0.8);
+        }
+    }
+    .swiper-button-prev {
+        left: -100px;
+    }
+    .swiper-button-next {
+        right: -100px;
+    }
+
+    // .swiper-button-prev {
+    //     @include flexCenter;
+    //     left: -100px;
+    //     width: 80px;
+    //     height: 80px;
+    //     margin: 0;
+    //     border-radius: 50%;
+    //     background: rgba($gray-300, 0.5);
+    // }
 }
 
 @media screen and (min-width: $breakpoint-md) {
