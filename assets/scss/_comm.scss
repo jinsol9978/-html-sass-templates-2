@@ -234,7 +234,9 @@
 }
 @media screen and (min-width: $breakpoint-xl) {
     #gnb {
-        .label-menu {
+        #btnMenu,
+        .label-menu,
+        .m-util {
             display: none;
         }
         .menu-wrap {
@@ -245,27 +247,50 @@
             padding: 0;
             background: transparent;
         }
-        .m-util {
-            display: none;
-        }
         .top-menu {
             flex-direction: row;
             margin-top: 0;
             dl {
                 position: relative;
-                padding: 0 40px;
+                padding: 0;
                 background-color: transparent;
-                &:hover dd {
-                    height: auto;
-                    max-height: 300px;
-                    padding: 10px 0 20px;
+                &:hover,
+                &:focus-within {
+                    dt {
+                        a {
+                            // font-weight: 700;
+                            color: $primary;
+                            text-decoration: none;
+                            &::before {
+                                width: 100%;
+                            }
+                        }
+                    }
+                    dd {
+                        height: auto;
+                        max-height: 300px;
+                        padding: 10px 0 20px;
+                    }
                 }
                 dt {
                     font-size: 1.2rem;
                     font-weight: 400;
                     a {
+                        position: relative;
                         @include flexitems;
                         height: $hdH-xl;
+                        padding: 0 40px;
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            bottom: 0;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            width: 0;
+                            height: 3px;
+                            background: $primary;
+                            transition: all 0.3s;
+                        }
                         &::after {
                             display: none;
                         }

@@ -475,7 +475,9 @@ legend {
 }
 
 @media screen and (min-width: 1280px) {
-  #gnb .label-menu {
+  #gnb #btnMenu,
+  #gnb .label-menu,
+  #gnb .m-util {
     display: none;
   }
   #gnb .menu-wrap {
@@ -486,19 +488,23 @@ legend {
     padding: 0;
     background: transparent;
   }
-  #gnb .m-util {
-    display: none;
-  }
   #gnb .top-menu {
     flex-direction: row;
     margin-top: 0;
   }
   #gnb .top-menu dl {
     position: relative;
-    padding: 0 40px;
+    padding: 0;
     background-color: transparent;
   }
-  #gnb .top-menu dl:hover dd {
+  #gnb .top-menu dl:hover dt a, #gnb .top-menu dl:focus-within dt a {
+    color: #445ded;
+    text-decoration: none;
+  }
+  #gnb .top-menu dl:hover dt a::before, #gnb .top-menu dl:focus-within dt a::before {
+    width: 100%;
+  }
+  #gnb .top-menu dl:hover dd, #gnb .top-menu dl:focus-within dd {
     height: auto;
     max-height: 300px;
     padding: 10px 0 20px;
@@ -508,9 +514,22 @@ legend {
     font-weight: 400;
   }
   #gnb .top-menu dl dt a {
+    position: relative;
     display: flex;
     align-items: center;
     height: 100px;
+    padding: 0 40px;
+  }
+  #gnb .top-menu dl dt a::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background: #445ded;
+    transition: all 0.3s;
   }
   #gnb .top-menu dl dt a::after {
     display: none;
