@@ -105,6 +105,8 @@
 #gnb {
     display: flex;
     .label-menu {
+        position: relative;
+        z-index: 1000;
         .bar {
             width: 30px;
             height: 3px;
@@ -114,10 +116,68 @@
         }
     }
     .m-util {
-        display: none;
+        // display: none;
     }
     .menu-wrap {
-        display: none;
+        // display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 999;
+        padding: 20px;
+        background: $white;
+    }
+    .m-util {
+        display: flex;
+        gap: 5px;
+        padding: 0;
+        a {
+            display: flex;
+            align-items: center;
+            padding: 5px 20px 7px;
+            border: 1px solid $gray-700;
+            border-radius: 5px;
+            font-weight: 700;
+            color: $gray-700;
+            &.active {
+                background: $primary;
+                border: 1px solid $primary;
+                color: $white;
+            }
+        }
+    }
+    .top-menu {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-top: 20px;
+        dl {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 20px;
+            background: $bgDefult;
+            border-radius: 5px;
+            dt {
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: $black;
+            }
+            dd {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                a {
+                    font-size: 1.4rem;
+                    color: $black;
+                    &.active {
+                        color: $primary;
+                    }
+                }
+            }
+        }
     }
 }
 
