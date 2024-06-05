@@ -125,10 +125,12 @@
 }
 .slide-eft {
     position: relative;
-    // overflow: visible;
-    width: 85%;
-    margin-left: 0;
-    margin-right: 0;
+    .swiper {
+        overflow: visible;
+        width: 85%;
+        margin-left: 0;
+        margin-right: 0;
+    }
     .swiper-slide {
         height: 400px;
         background: $gray-300;
@@ -165,12 +167,12 @@
 }
 
 @media screen and (min-width: $breakpoint-md) {
-    .slide-eft {
+    .slide-eft .swiper {
         width: 95%;
     }
 }
 @media screen and (min-width: $breakpoint-xl) {
-    .slide-eft {
+    .slide-eft .swiper {
         width: 100%;
     }
 }

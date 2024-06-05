@@ -145,18 +145,215 @@
 }
 
 // section
-.sec-type1 {
+.sec-type1,
+.sec-type2 {
     padding: 50px 0;
     .sec-title {
-        padding: 30px 0;
+        padding-bottom: 30px;
         font-size: 1.875rem;
         color: $black;
         text-align: center;
     }
 }
+@media screen and (min-width: $breakpoint-xl) {
+    .sec-type1,
+    .sec-type2 {
+        padding: 150px 0;
+    }
+}
 
 // footer
-#footer {
-    padding: 20px 0;
-    background: blue;
+/* home_footer */
+footer {
+    background: #f9f9f9;
+
+    .footer_cont {
+        margin: 0 auto 50px;
+        max-width: 1476px;
+        position: relative;
+        padding: 50px 90px;
+
+        &.mo-foot {
+            display: none;
+        }
+
+        .footer_left {
+            width: calc(100% - 156px);
+            float: left;
+            text-align: left;
+
+            img {
+                width: 180px;
+            }
+
+            .copyright_txt {
+                margin: 36px 0 23px;
+
+                p {
+                    font-size: 12px;
+                    line-height: 20px;
+                    color: #999;
+                    font-weight: 700;
+
+                    &.en {
+                        margin-top: 4px;
+                        font-size: 14px;
+                        letter-spacing: 0;
+                        font-weight: 500;
+                    }
+                }
+            }
+
+            .link_txt {
+                a {
+                    font-size: 14px;
+                    line-height: 1;
+                    color: #999;
+                    display: inline-block;
+                    margin-left: 19px;
+                    font-weight: 700;
+                    transition: 0.3s;
+
+                    &:hover {
+                        color: #117ce9;
+                    }
+
+                    &:first-child {
+                        margin: 0;
+                    }
+                }
+
+                display: inline-block;
+                margin-right: 9%;
+                margin-bottom: 10px;
+            }
+
+            .link_social {
+                display: inline-block;
+
+                ul li {
+                    display: inline-block;
+                    margin-left: 24px;
+                    text-align: right;
+
+                    &:first-child {
+                        margin: 0;
+                    }
+
+                    a {
+                        display: block;
+                        font-size: 14px;
+                        line-height: 1;
+                        color: #aaa;
+                        display: inline-block;
+                        font-weight: 700;
+                        transition: 0.3s;
+
+                        &:hover {
+                            color: #117ce9;
+                        }
+                    }
+                }
+            }
+        }
+
+        .footer_right {
+            width: auto;
+            float: right;
+            text-align: right;
+
+            .famliy_site {
+                display: inline-block;
+                margin-top: -9px;
+                position: relative;
+
+                button {
+                    position: relative;
+                    height: 40px;
+                    line-height: 40px;
+                    background: #999;
+                    display: inline-block;
+                    padding: 0 42px 0 14px;
+                    font-size: 13px;
+                    font-weight: 700;
+                    color: #fff;
+                    border-radius: 5px;
+                    transition: 0.3s;
+
+                    &:hover {
+                        background: #000;
+                    }
+
+                    &::after {
+                        content: '';
+                        display: inline-block;
+                        width: 14px;
+                        height: 14px;
+                        position: absolute;
+                        top: 13px;
+                        right: 14px;
+                        background: url('/static/images/footer_open.png') no-repeat center;
+                        background-size: cover;
+                        transition: 0.3s;
+                    }
+                }
+
+                ul {
+                    display: none;
+                    padding: 8px 0;
+                    width: 100%;
+                    position: absolute;
+                    bottom: 48px;
+                    text-align: left;
+                    border: 1px solid #eee;
+                    border-radius: 4px;
+                    background-color: #fff;
+
+                    li {
+                        position: relative;
+                        padding: 6px 14px;
+
+                        a {
+                            display: block;
+                            font-size: 13px;
+                            font-weight: 700;
+                            letter-spacing: -0.3px;
+                            color: #1e1e1e;
+                            transition: 0.3s;
+
+                            &:hover {
+                                color: #117ce9;
+                            }
+
+                            &::after {
+                                content: '';
+                                display: block;
+                                width: 24px;
+                                height: 24px;
+                                position: absolute;
+                                top: 0;
+                                right: 10px;
+                                background: url('/static/images/outlink_icon.png') no-repeat center;
+                                background-size: cover;
+                                transition: 0.3s;
+                                opacity: 0;
+                            }
+
+                            &:hover::after {
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+
+                &.on button {
+                    background: #1e1e1e;
+
+                    &::after {
+                        transform: rotate(45deg);
+                    }
+                }
+            }
+        }
+    }
 }
