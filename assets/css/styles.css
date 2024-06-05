@@ -370,16 +370,31 @@ legend {
   background: #000;
   margin: 5px 0;
   border-radius: 3px;
+  transition: all 0.3s;
+}
+#gnb #btnMenu:checked + .label-menu .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+#gnb #btnMenu:checked + .label-menu .bar:nth-child(2) {
+  opacity: 0;
+}
+#gnb #btnMenu:checked + .label-menu .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+#gnb #btnMenu:checked ~ .menu-wrap {
+  left: 0;
 }
 #gnb .menu-wrap {
+  overflow-y: auto;
   position: fixed;
   top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  left: 100%;
+  width: 100%;
+  height: 100%;
   z-index: 999;
   padding: 20px;
   background: #fff;
+  transition: all 0.3s;
 }
 #gnb .m-util {
   display: flex;
