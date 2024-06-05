@@ -107,6 +107,7 @@
     .label-menu {
         position: relative;
         z-index: 1000;
+        transform: translateY(9px);
         .bar {
             width: 30px;
             height: 3px;
@@ -114,9 +115,6 @@
             margin: 5px 0;
             border-radius: 3px;
         }
-    }
-    .m-util {
-        // display: none;
     }
     .menu-wrap {
         // display: none;
@@ -151,27 +149,55 @@
     .top-menu {
         display: flex;
         flex-direction: column;
-        gap: 20px;
+        gap: 10px;
         margin-top: 20px;
         dl {
             display: flex;
             flex-direction: column;
-            gap: 10px;
-            padding: 20px;
+            padding: 0 20px;
             background: $bgDefult;
             border-radius: 5px;
+            &.active {
+                dt a::after {
+                    content: '\f068';
+                }
+                dd {
+                    height: auto;
+                    padding-bottom: 20px;
+                }
+            }
             dt {
                 font-size: 1.5rem;
                 font-weight: 700;
                 color: $black;
+                a {
+                    position: relative;
+                    display: block;
+                    padding: 12px 0 17px;
+                    &::after {
+                        content: '\f067';
+                        position: absolute;
+                        top: 50%;
+                        right: 0;
+                        transform: translateY(-57%);
+                        font-family: 'Line Awesome Free';
+                        font-weight: 900;
+                    }
+                }
             }
             dd {
                 display: flex;
                 flex-direction: column;
                 gap: 5px;
+                overflow: hidden;
+                height: 0;
+                padding-top: 0;
+                padding-bottom: 0;
                 a {
-                    font-size: 1.4rem;
-                    color: $black;
+                    display: block;
+                    padding: 3px 0;
+                    font-size: 1.2rem;
+                    color: $blurTxt;
                     &.active {
                         color: $primary;
                     }

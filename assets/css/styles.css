@@ -362,6 +362,7 @@ legend {
 #gnb .label-menu {
   position: relative;
   z-index: 1000;
+  transform: translateY(9px);
 }
 #gnb .label-menu .bar {
   width: 30px;
@@ -402,30 +403,56 @@ legend {
 #gnb .top-menu {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
   margin-top: 20px;
 }
 #gnb .top-menu dl {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding: 20px;
+  padding: 0 20px;
   background: rgba(68, 93, 237, 0.05);
   border-radius: 5px;
+}
+#gnb .top-menu dl.active dt a::after {
+  content: "\f068";
+}
+#gnb .top-menu dl.active dd {
+  height: auto;
+  padding-bottom: 20px;
 }
 #gnb .top-menu dl dt {
   font-size: 1.5rem;
   font-weight: 700;
   color: #000;
 }
+#gnb .top-menu dl dt a {
+  position: relative;
+  display: block;
+  padding: 12px 0 17px;
+}
+#gnb .top-menu dl dt a::after {
+  content: "\f067";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-57%);
+  font-family: "Line Awesome Free";
+  font-weight: 900;
+}
 #gnb .top-menu dl dd {
   display: flex;
   flex-direction: column;
   gap: 5px;
+  overflow: hidden;
+  height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 #gnb .top-menu dl dd a {
-  font-size: 1.4rem;
-  color: #000;
+  display: block;
+  padding: 3px 0;
+  font-size: 1.2rem;
+  color: rgba(32, 32, 32, 0.7);
 }
 #gnb .top-menu dl dd a.active {
   color: #445ded;
