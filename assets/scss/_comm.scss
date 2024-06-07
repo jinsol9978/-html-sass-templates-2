@@ -331,7 +331,7 @@
         display: flex;
         align-items: center;
         padding: 0 20px;
-        height: 90px;
+        height: $hdH-xl;
         color: $blurTxt;
         &.active {
             color: $txtDefult;
