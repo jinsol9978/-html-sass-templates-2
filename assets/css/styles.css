@@ -288,6 +288,18 @@ legend {
   padding: 30px 0;
 }
 
+.dimmed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.3);
+  -webkit-backdrop-filter: blur(30px);
+          backdrop-filter: blur(30px);
+}
+
 .swiper {
   width: 100%;
   height: 100%;
@@ -354,7 +366,6 @@ legend {
 @media screen and (min-width: 1280px) {
   #header {
     position: relative;
-    z-index: 9999;
   }
 }
 #gnb {
@@ -585,8 +596,45 @@ legend {
   display: none;
 }
 
-.search-area .layer-search {
-  display: none;
+.search-area .btn-search {
+  display: flex;
+  align-items: center;
+  height: 100px;
+  padding: 0 10px;
+}
+.search-area .btn-search i {
+  font-size: 1.7rem;
+  transform: scaleX(-1);
+}
+.search-area .search-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  background: #fff;
+}
+.search-area .search-box .form-search {
+  display: flex;
+  gap: 20px;
+  padding: 0 20px;
+  border: 2px solid #445ded;
+}
+.search-area .search-box .inp-search {
+  width: 600px;
+  padding: 20px 0;
+  border: none;
+}
+.search-area .search-box .inp-search:focus {
+  outline: none;
+}
+.search-area .search-box .btn-submit {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #445ded;
+  color: #fff;
+  transform: scaleX(-1);
+  font-size: 1.2rem;
 }
 
 #main {
