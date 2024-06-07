@@ -212,12 +212,12 @@ input[type=password] {
 .blind,
 caption,
 legend {
-  overflow: hidden;
   position: absolute;
-  width: 0;
-  height: 0;
-  line-height: 0;
-  text-indent: -9999px;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
 }
 
 /* 대체텍스트가 아닌 접근성을 위한 숨김텍스트를 제공할때 */
@@ -377,6 +377,7 @@ legend {
   transform: translateY(9px);
 }
 #gnb .label-menu .bar {
+  display: block;
   width: 30px;
   height: 3px;
   background: #000;
@@ -605,6 +606,9 @@ legend {
 .search-area .btn-search i {
   font-size: 1.7rem;
   transform: scaleX(-1);
+}
+.search-area .layer-search {
+  display: none;
 }
 .search-area .search-box {
   position: relative;

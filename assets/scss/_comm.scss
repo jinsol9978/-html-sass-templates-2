@@ -119,6 +119,7 @@
         z-index: 1000;
         transform: translateY(9px);
         .bar {
+            display: block;
             width: 30px;
             height: 3px;
             background: $black;
@@ -362,7 +363,6 @@
 }
 .search-area {
     .btn-search {
-        // display: none;
         @include flexitems;
         height: $hdH-xl;
         padding: 0 10px;
@@ -372,7 +372,7 @@
         }
     }
     .layer-search {
-        // display: none;
+        display: none;
     }
     .search-box {
         position: relative;
