@@ -375,19 +375,23 @@
         // display: none;
     }
     .search-box {
+        position: relative;
         @include flexCenter;
         height: 300px;
         background: $white;
         .form-search {
             display: flex;
+            align-items: center;
             gap: 20px;
-            padding: 0 20px;
+            padding: 0 10px 0 30px;
             border: 2px solid $primary;
+            border-radius: 62px;
         }
         .inp-search {
             width: 600px;
             padding: 20px 0;
             border: none;
+            background-color: transparent;
             &:focus {
                 outline: none;
             }
@@ -400,6 +404,19 @@
             color: $white;
             transform: scaleX(-1);
             font-size: 1.2rem;
+        }
+        .btn-close {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            @include flexCenter;
+            width: 70px;
+            height: 70px;
+            background: $primary;
+            i {
+                color: $white;
+                font-size: 2rem;
+            }
         }
     }
 }

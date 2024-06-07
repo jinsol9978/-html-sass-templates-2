@@ -607,6 +607,7 @@ legend {
   transform: scaleX(-1);
 }
 .search-area .search-box {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -615,14 +616,17 @@ legend {
 }
 .search-area .search-box .form-search {
   display: flex;
+  align-items: center;
   gap: 20px;
-  padding: 0 20px;
+  padding: 0 10px 0 30px;
   border: 2px solid #445ded;
+  border-radius: 62px;
 }
 .search-area .search-box .inp-search {
   width: 600px;
   padding: 20px 0;
   border: none;
+  background-color: transparent;
 }
 .search-area .search-box .inp-search:focus {
   outline: none;
@@ -635,6 +639,21 @@ legend {
   color: #fff;
   transform: scaleX(-1);
   font-size: 1.2rem;
+}
+.search-area .search-box .btn-close {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 70px;
+  background: #445ded;
+}
+.search-area .search-box .btn-close i {
+  color: #fff;
+  font-size: 2rem;
 }
 
 #main {
