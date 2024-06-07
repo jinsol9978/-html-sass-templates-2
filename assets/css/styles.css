@@ -468,7 +468,7 @@ legend {
   display: block;
   padding: 3px 0;
   font-size: 1.2rem;
-  color: rgba(32, 32, 32, 0.7);
+  color: rgba(32, 32, 32, 0.5);
 }
 #gnb .top-menu dl dd a.active {
   color: #445ded;
@@ -561,11 +561,28 @@ legend {
   display: flex;
 }
 .lang a {
+  position: relative;
   display: flex;
   align-items: center;
   padding: 0 20px;
   height: 90px;
-  color: #000;
+  color: rgba(32, 32, 32, 0.5);
+}
+.lang a.active {
+  color: #202020;
+}
+.lang a::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 20px;
+  background: #e0e0e0;
+}
+.lang a:first-child::before {
+  display: none;
 }
 
 .search-area .layer-search {

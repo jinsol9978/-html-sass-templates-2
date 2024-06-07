@@ -327,11 +327,28 @@
 .lang {
     display: flex;
     a {
+        position: relative;
         display: flex;
         align-items: center;
         padding: 0 20px;
         height: 90px;
-        color: #000;
+        color: $blurTxt;
+        &.active {
+            color: $txtDefult;
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            width: 1px;
+            height: 20px;
+            background: $gray-300;
+        }
+        &:first-child::before {
+            display: none;
+        }
     }
 }
 .search-area {
