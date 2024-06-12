@@ -1,37 +1,25 @@
-var swiper = new Swiper('.slide-intro', {
-    spaceBetween: 30,
-    centeredSlides: true,
-    loop: true,
-    // autoplay: {
-    //     delay: 3000,
-    //     disableOnInteraction: false,
-    // },
-    pagination: {
-        el: '.swiper-pagination',
-        type: 'fraction',
-    },
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
-})
+const headerEl = document.querySelector('#header');
 
-var swiper = new Swiper('.slide-eft .swiper', {
-    slidesPerView: 1,
-    spaceBetween: 20,
-    loop: true,
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
-    breakpoints: {
-        768: {
-            slidesPerView: 2,
-            spaceBetween: 30,
-        },
-        1280: {
-            slidesPerView: 4,
-            spaceBetween: 24,
-        },
-    },
-})
+window.addEventListener(
+    'scroll',
+    _.throttle(function () {
+        if (window.scrollY > 200) {
+            // #header가 bg-w 클래스 추가
+            headerEl.classList.add('bg-w');
+            gsap.to(headerEl, {
+                // y: -70,
+                backgroundColor: 'rgba(255, 255, 255, 0.3)',
+                backdropFilter: 'blur(30px)',
+                duration: 0.5,
+            });
+        } else {
+            headerEl.classList.remove('bg-w');
+            gsap.to(headerEl, {
+                // y: 0,
+                backgroundColor: 'transparent',
+                backdropFilter: 'blur(0)',
+                duration: 0.5,
+            });
+        }
+    }, 300),
+);
