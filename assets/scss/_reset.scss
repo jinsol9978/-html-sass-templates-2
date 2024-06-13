@@ -129,10 +129,13 @@ input {
 /* 기본 폰트 설정 */
 /* mobile */
 body {
-    font-size: 16px;
+    font-size: 17px;
     line-height: 1.5;
-    font-family: 'Noto Sans KR', 'Malgun Gothic', '맑은 고딕', sans-serif;
-    color: $txtDefult;
+    font-family: 'Pretendard GOV Variable', 'Pretendard GOV', -apple-system, BlinkMacSystemFont, system-ui, Roboto,
+        'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji',
+        'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+    color: $gray-90;
+    font-weight: 400;
 }
 
 /* desktop */
@@ -143,13 +146,30 @@ body {
 // }
 
 /* color값은 디자인가이드에 맞게사용 */
+
+// States
+
+// 상태 표시 색상은 상황별 의미를 전달하는 색상으로 4가지 유형으로 사용하며, 기준 색상(Primary color)에서 점진적으로 증가하거나 감소하도록 정의한다.
+// https://uiux.egovframe.go.kr/resources/img/guide/contents/style/style_02_01.png
+
 a {
-    color: #333;
+    color: $gray-90;
     text-decoration: none;
 
     &:active,
     &:hover {
-        text-decoration: underline;
+        text-decoration: none;
+    }
+}
+@media screen and (min-width: 1280px) {
+    a {
+        color: #333;
+        text-decoration: none;
+
+        &:active,
+        &:hover {
+            text-decoration: underline;
+        }
     }
 }
 

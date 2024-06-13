@@ -1,5 +1,6 @@
 // slide-intro
 .slide-intro {
+    position: relative;
     .swiper-slide {
         position: relative;
         &.swiper-slide-active {
@@ -23,7 +24,7 @@
         span {
             padding: 3px 10px;
             font-size: 0.875rem;
-            background: $primary;
+            background: $primary-50;
         }
         strong {
             display: block;
@@ -32,6 +33,19 @@
             line-height: 1.2;
         }
     }
+    .swiper-button-pause {
+        display: none;
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        z-index: 10;
+        background: #000;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+
     picture {
         position: relative;
         width: 100%;
@@ -59,7 +73,7 @@
         bottom: 90px;
         &:hover {
             &::before {
-                color: $secondary;
+                color: $secondary-50;
             }
         }
         &::before {
@@ -90,7 +104,7 @@
         left: 50%;
         bottom: 86px;
         transform: translateX(-500px);
-        color: $primary;
+        color: $white;
         font-size: 1.2rem;
         span {
             font-weight: bold;
@@ -99,6 +113,9 @@
 }
 @media screen and (min-width: $breakpoint-xl) {
     .slide-intro {
+        .swiper-button-pause {
+            display: block;
+        }
         .slide-txt {
             width: 100%;
             text-align: left;
@@ -114,7 +131,7 @@
             }
         }
         img {
-            height: 640px;
+            height: 820px;
         }
     }
 }
@@ -133,7 +150,7 @@
     }
     .swiper-slide {
         height: 400px;
-        background: $gray-300;
+        background: $gray-5;
         border-radius: 20px;
     }
     .swiper-button-prev,

@@ -120,22 +120,32 @@ input[type=search]::-webkit-search-cancel-button {
 /* 기본 폰트 설정 */
 /* mobile */
 body {
-  font-size: 16px;
+  font-size: 17px;
   line-height: 1.5;
-  font-family: "Noto Sans KR", "Malgun Gothic", "맑은 고딕", sans-serif;
-  color: #202020;
+  font-family: "Pretendard GOV Variable", "Pretendard GOV", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  color: #1d1d1d;
+  font-weight: 400;
 }
 
 /* desktop */
 /* color값은 디자인가이드에 맞게사용 */
 a {
-  color: #333;
+  color: #1d1d1d;
   text-decoration: none;
 }
 a:active, a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
+@media screen and (min-width: 1280px) {
+  a {
+    color: #333;
+    text-decoration: none;
+  }
+  a:active, a:hover {
+    text-decoration: underline;
+  }
+}
 address,
 caption,
 cite,
@@ -260,7 +270,7 @@ legend {
 }
 
 :root {
-  --swiper-theme-color: #0400ff;
+  --swiper-theme-color: #fff;
 }
 
 .container {
@@ -359,8 +369,9 @@ legend {
 #header #logo a {
   display: flex;
   align-items: center;
-  height: 60px;
+  height: 70px;
   font-size: 1.4rem;
+  color: #fff;
 }
 
 @media screen and (min-width: 1280px) {
@@ -377,25 +388,26 @@ legend {
 #gnb .label-menu {
   position: relative;
   z-index: 1000;
-  transform: translateY(9px);
 }
 #gnb .label-menu .bar {
   display: block;
   width: 30px;
-  height: 3px;
-  background: #000;
+  height: 2px;
+  background: #fff;
   margin: 5px 0;
   border-radius: 3px;
   transition: all 0.3s;
 }
 #gnb #btnMenu:checked + .label-menu .bar:nth-child(1) {
-  transform: translateY(8px) rotate(45deg);
+  transform: translateY(7px) rotate(45deg);
+  background: #000;
 }
 #gnb #btnMenu:checked + .label-menu .bar:nth-child(2) {
   opacity: 0;
 }
 #gnb #btnMenu:checked + .label-menu .bar:nth-child(3) {
-  transform: translateY(-8px) rotate(-45deg);
+  transform: translateY(-7px) rotate(-45deg);
+  background: #000;
 }
 #gnb #btnMenu:checked ~ .menu-wrap {
   left: 0;
@@ -406,7 +418,7 @@ legend {
   top: 0;
   left: 100%;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   z-index: 999;
   padding: 20px;
   background: #fff;
@@ -420,15 +432,14 @@ legend {
 #gnb .m-util a {
   display: flex;
   align-items: center;
-  padding: 5px 20px 7px;
-  border: 1px solid #616161;
+  padding: 7px 20px 5px;
+  border: 1px solid #c6c6c6;
   border-radius: 5px;
-  font-weight: 700;
-  color: #616161;
+  color: #555555;
 }
 #gnb .m-util a.active {
-  background: #445ded;
-  border: 1px solid #445ded;
+  background: #246beb;
+  border: 1px solid #246beb;
   color: #fff;
 }
 #gnb .top-menu {
@@ -441,25 +452,25 @@ legend {
   display: flex;
   flex-direction: column;
   padding: 0 20px;
-  background: rgba(68, 93, 237, 0.05);
+  background: rgba(36, 107, 235, 0.05);
   border-radius: 5px;
+}
+#gnb .top-menu dl.active dt a {
+  color: #246beb;
+  font-weight: 700;
 }
 #gnb .top-menu dl.active dt a::after {
   content: "\f068";
 }
 #gnb .top-menu dl.active dd {
-  height: auto;
+  display: flex;
   padding-bottom: 20px;
-}
-#gnb .top-menu dl dt {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #000;
 }
 #gnb .top-menu dl dt a {
   position: relative;
   display: block;
-  padding: 12px 0 17px;
+  padding: 15px 0;
+  font-size: 1.1875rem;
 }
 #gnb .top-menu dl dt a::after {
   content: "\f067";
@@ -471,22 +482,32 @@ legend {
   font-weight: 900;
 }
 #gnb .top-menu dl dd {
-  display: flex;
+  display: none;
   flex-direction: column;
   gap: 5px;
   overflow: hidden;
-  height: 0;
   padding-top: 0;
   padding-bottom: 0;
+  transition: all 0.7s;
 }
 #gnb .top-menu dl dd a {
+  position: relative;
   display: block;
-  padding: 3px 0;
-  font-size: 1.2rem;
-  color: rgba(32, 32, 32, 0.5);
+  padding: 3px 0 3px 16px;
+  color: #555555;
 }
 #gnb .top-menu dl dd a.active {
-  color: #445ded;
+  color: #246beb;
+}
+#gnb .top-menu dl dd a::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 3px;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 3px;
+  background: rgba(29, 29, 29, 0.5);
 }
 
 @media screen and (min-width: 1280px) {
@@ -512,8 +533,11 @@ legend {
     padding: 0;
     background-color: transparent;
   }
+  #gnb .top-menu dl.active dd {
+    display: none;
+  }
   #gnb .top-menu dl:hover dt a, #gnb .top-menu dl:focus-within dt a {
-    color: #445ded;
+    color: #246beb;
     text-decoration: none;
   }
   #gnb .top-menu dl:hover dt a::before, #gnb .top-menu dl:focus-within dt a::before {
@@ -543,7 +567,7 @@ legend {
     transform: translateX(-50%);
     width: 0;
     height: 3px;
-    background: #445ded;
+    background: #246beb;
     transition: all 0.3s;
   }
   #gnb .top-menu dl dt a::after {
@@ -581,7 +605,7 @@ legend {
   align-items: center;
   padding: 0 20px;
   height: 100px;
-  color: rgba(32, 32, 32, 0.5);
+  color: #555555;
 }
 .lang a.active {
   color: #202020;
@@ -594,7 +618,7 @@ legend {
   transform: translateY(-50%);
   width: 1px;
   height: 20px;
-  background: #e0e0e0;
+  background: #f8f8f8;
 }
 .lang a:first-child::before {
   display: none;
@@ -626,7 +650,7 @@ legend {
   align-items: center;
   gap: 20px;
   padding: 0 10px 0 30px;
-  border: 2px solid #445ded;
+  border: 2px solid #246beb;
   border-radius: 62px;
 }
 .search-area .search-box .inp-search {
@@ -642,7 +666,7 @@ legend {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: #445ded;
+  background: #246beb;
   color: #fff;
   transform: scaleX(-1);
   font-size: 1.2rem;
@@ -656,7 +680,7 @@ legend {
   align-items: center;
   width: 70px;
   height: 70px;
-  background: #445ded;
+  background: #246beb;
 }
 .search-area .search-box .btn-close i {
   color: #fff;
@@ -719,7 +743,6 @@ footer .footer_cont .footer_left .copyright_txt p.en {
   margin-top: 4px;
   font-size: 14px;
   letter-spacing: 0;
-  font-weight: 500;
 }
 footer .footer_cont .footer_left .link_txt {
   display: inline-block;
@@ -851,6 +874,9 @@ footer .footer_cont .footer_right .famliy_site.on button::after {
   transform: rotate(45deg);
 }
 
+.slide-intro {
+  position: relative;
+}
 .slide-intro .swiper-slide {
   position: relative;
 }
@@ -873,13 +899,25 @@ footer .footer_cont .footer_right .famliy_site.on button::after {
 .slide-intro .slide-txt span {
   padding: 3px 10px;
   font-size: 0.875rem;
-  background: #445ded;
+  background: #246beb;
 }
 .slide-intro .slide-txt strong {
   display: block;
   margin: 10px 0 15px;
   font-size: 2.3rem;
   line-height: 1.2;
+}
+.slide-intro .swiper-button-pause {
+  display: none;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  z-index: 10;
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
 }
 .slide-intro picture {
   position: relative;
@@ -905,7 +943,7 @@ footer .footer_cont .footer_right .famliy_site.on button::after {
 }
 .slide-intro .swiper-button-prev:hover::before,
 .slide-intro .swiper-button-next:hover::before {
-  color: #ff5722;
+  color: #003675;
 }
 .slide-intro .swiper-button-prev::before,
 .slide-intro .swiper-button-next::before {
@@ -935,7 +973,7 @@ footer .footer_cont .footer_right .famliy_site.on button::after {
   left: 50%;
   bottom: 86px;
   transform: translateX(-500px);
-  color: #445ded;
+  color: #fff;
   font-size: 1.2rem;
 }
 .slide-intro .swiper-pagination span {
@@ -943,6 +981,9 @@ footer .footer_cont .footer_right .famliy_site.on button::after {
 }
 
 @media screen and (min-width: 1280px) {
+  .slide-intro .swiper-button-pause {
+    display: block;
+  }
   .slide-intro .slide-txt {
     width: 100%;
     text-align: left;
@@ -958,7 +999,7 @@ footer .footer_cont .footer_right .famliy_site.on button::after {
     font-size: 1.5rem;
   }
   .slide-intro img {
-    height: 640px;
+    height: 820px;
   }
 }
 .sec-eft {
@@ -976,7 +1017,7 @@ footer .footer_cont .footer_right .famliy_site.on button::after {
 }
 .slide-eft .swiper-slide {
   height: 400px;
-  background: #e0e0e0;
+  background: #f8f8f8;
   border-radius: 20px;
 }
 .slide-eft .swiper-button-prev,
@@ -987,7 +1028,7 @@ footer .footer_cont .footer_right .famliy_site.on button::after {
   width: 80px;
   height: 80px;
   margin: 0;
-  background: rgba(68, 93, 237, 0.5);
+  background: rgba(36, 107, 235, 0.5);
   transform: translateY(-50%);
 }
 .slide-eft .swiper-button-prev::after,

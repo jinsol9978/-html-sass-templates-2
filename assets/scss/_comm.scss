@@ -1,5 +1,5 @@
 :root {
-    --swiper-theme-color: #0400ff;
+    --swiper-theme-color: #fff;
 }
 
 // 사이트의 공통 스타일을 정의합니다.
@@ -103,6 +103,7 @@
             @include flexitems;
             height: $hdH;
             font-size: 1.4rem;
+            color: $white;
         }
     }
 }
@@ -124,12 +125,11 @@
     .label-menu {
         position: relative;
         z-index: 1000;
-        transform: translateY(9px);
         .bar {
             display: block;
             width: 30px;
-            height: 3px;
-            background: $black;
+            height: 2px;
+            background: $white;
             margin: 5px 0;
             border-radius: 3px;
             transition: all 0.3s;
@@ -141,13 +141,15 @@
             + .label-menu {
                 .bar {
                     &:nth-child(1) {
-                        transform: translateY(8px) rotate(45deg);
+                        transform: translateY(7px) rotate(45deg);
+                        background: $black;
                     }
                     &:nth-child(2) {
                         opacity: 0;
                     }
                     &:nth-child(3) {
-                        transform: translateY(-8px) rotate(-45deg);
+                        transform: translateY(-7px) rotate(-45deg);
+                        background: $black;
                     }
                 }
             }
@@ -164,7 +166,7 @@
         top: 0;
         left: 100%;
         width: 100%;
-        height: 100%;
+        height: 100vh;
         z-index: 999;
         padding: 20px;
         background: $white;
@@ -177,14 +179,13 @@
         a {
             display: flex;
             align-items: center;
-            padding: 5px 20px 7px;
-            border: 1px solid $gray-700;
+            padding: 7px 20px 5px;
+            border: 1px solid $gray-40;
             border-radius: 5px;
-            font-weight: 700;
-            color: $gray-700;
+            color: $gray-70;
             &.active {
-                background: $primary;
-                border: 1px solid $primary;
+                background: $primary-50;
+                border: 1px solid $primary-50;
                 color: $white;
             }
         }
@@ -201,22 +202,27 @@
             background: $bgDefult;
             border-radius: 5px;
             &.active {
-                dt a::after {
-                    content: '\f068';
+                dt {
+                    a {
+                        color: $primary-50;
+                        font-weight: 700;
+                        &::after {
+                            content: '\f068';
+                        }
+                    }
                 }
                 dd {
-                    height: auto;
+                    display: flex;
+                    // height: auto;
                     padding-bottom: 20px;
                 }
             }
             dt {
-                font-size: 1.5rem;
-                font-weight: 700;
-                color: $black;
                 a {
                     position: relative;
                     display: block;
-                    padding: 12px 0 17px;
+                    padding: 15px 0;
+                    font-size: 1.1875rem;
                     &::after {
                         content: '\f067';
                         position: absolute;
@@ -229,20 +235,31 @@
                 }
             }
             dd {
-                display: flex;
+                display: none;
                 flex-direction: column;
                 gap: 5px;
                 overflow: hidden;
-                height: 0;
+                // height: 0;
                 padding-top: 0;
                 padding-bottom: 0;
+                transition: all 0.7s;
                 a {
+                    position: relative;
                     display: block;
-                    padding: 3px 0;
-                    font-size: 1.2rem;
-                    color: $blurTxt;
+                    padding: 3px 0 3px 16px;
+                    color: $gray-70;
                     &.active {
-                        color: $primary;
+                        color: $primary-50;
+                    }
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 50%;
+                        left: 3px;
+                        transform: translateY(-50%);
+                        width: 3px;
+                        height: 3px;
+                        background: rgba($gray-90, 0.5);
                     }
                 }
             }
@@ -271,12 +288,17 @@
                 position: relative;
                 padding: 0;
                 background-color: transparent;
+                &.active {
+                    dd {
+                        display: none;
+                    }
+                }
                 &:hover,
                 &:focus-within {
                     dt {
                         a {
                             // font-weight: 700;
-                            color: $primary;
+                            color: $primary-50;
                             text-decoration: none;
                             &::before {
                                 width: 100%;
@@ -305,7 +327,7 @@
                             transform: translateX(-50%);
                             width: 0;
                             height: 3px;
-                            background: $primary;
+                            background: $primary-50;
                             transition: all 0.3s;
                         }
                         &::after {
@@ -349,7 +371,7 @@
         align-items: center;
         padding: 0 20px;
         height: $hdH-xl;
-        color: $blurTxt;
+        color: $gray-70;
         &.active {
             color: $txtDefult;
         }
@@ -361,7 +383,7 @@
             transform: translateY(-50%);
             width: 1px;
             height: 20px;
-            background: $gray-300;
+            background: $gray-5;
         }
         &:first-child::before {
             display: none;
@@ -391,7 +413,7 @@
             align-items: center;
             gap: 20px;
             padding: 0 10px 0 30px;
-            border: 2px solid $primary;
+            border: 2px solid $primary-50;
             border-radius: 62px;
         }
         .inp-search {
@@ -407,7 +429,7 @@
             width: 40px;
             height: 40px;
             border-radius: 50%;
-            background: $primary;
+            background: $primary-50;
             color: $white;
             transform: scaleX(-1);
             font-size: 1.2rem;
@@ -419,7 +441,7 @@
             @include flexCenter;
             width: 70px;
             height: 70px;
-            background: $primary;
+            background: $primary-50;
             i {
                 color: $white;
                 font-size: 2rem;
@@ -487,7 +509,6 @@ footer {
                         margin-top: 4px;
                         font-size: 14px;
                         letter-spacing: 0;
-                        font-weight: 500;
                     }
                 }
             }
