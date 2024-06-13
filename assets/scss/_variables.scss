@@ -7,7 +7,7 @@
 // Color는 명확한 커뮤니케이션을 위해 색상 명을 사용한다.
 
 ////////////////////////////
-// ## Primary color
+// ## Primary colors
 
 // Primary Color는 버튼, 활성 상태와 같은 UI 전체의 주요 구성 요소에 사용된다.
 // https://uiux.egovframe.go.kr/resources/img/guide/contents/style/style_02_13.png
@@ -26,7 +26,7 @@ $primary-90: #07152f;
 $primary-100: #000000;
 
 ////////////////////////////
-// # Secondary color
+// # Secondary colors
 
 // Secondary Color는 필터, 칩과 같이 UI에서 보조적인 역할을 하는 구성 요소 전반에 사용된다.
 // https://uiux.egovframe.go.kr/resources/img/guide/contents/style/style_02_14.png
@@ -142,7 +142,7 @@ $info-70: #173e99;
 $info-80: #0c1f4d;
 $info-90: #040a1a;
 
-$fontSize: 16px;
+$fontSize: 17px;
 $fontFamily: 'Noto Sans KR', sans-serif;
 
 // 반응형 미디어 쿼리
@@ -153,7 +153,7 @@ $breakpoint-xl: 1280px;
 $breakpoint-xxl: 1440px;
 
 // layout
-$hdH: 70px;
-$hdH-xl: 100px;
+$hdH: 60px;
+$hdH-xl: 80px;
 
 $ftH: 70px;
